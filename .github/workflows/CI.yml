@@ -11,7 +11,7 @@ on:
 jobs:
   job1:
 
-    runs-on: macOS-latest
+    runs-on: macos-15
     permissions:
       contents: read
       packages: write
@@ -34,8 +34,8 @@ jobs:
       run: gradle build
      # run: ./gradlew compileJava
 
-   # - name: Run Tests
-    #  run: gradle test
+    - name: Run Tests
+      run: gradle test
      # run: ./gradlew test
 
     - name: Code Review (Static Analysis)
@@ -45,5 +45,10 @@ jobs:
     - name: Package JAR
       run: gradle jar
      # run: ./gradlew build
+    - name: Upload JAR artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: chess-game-jar
+        path: build/libs/*.jar
 
     
