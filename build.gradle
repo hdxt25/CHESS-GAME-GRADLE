@@ -10,8 +10,19 @@ repositories {
     mavenCentral()
 }
 
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    implementation 'org.slf4j:slf4j-api:2.0.12'
+
+    // ✅ Add JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
 }
 
 test {
