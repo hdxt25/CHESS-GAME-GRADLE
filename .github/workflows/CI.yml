@@ -31,11 +31,11 @@ jobs:
    # - name: Grant execute permission for Gradle wrapper
    #   run: chmod +x gradlew
     - name: Compile
-      run: gradle build -x test
+      run: gradle build
      # run: ./gradlew compileJava
 
-    - name: Run Tests
-      run: gradle test
+   # - name: Run Tests
+    #  run: gradle test
      # run: ./gradlew test
 
     - name: Code Review (Static Analysis)
